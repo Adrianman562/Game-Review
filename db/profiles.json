@@ -1,0 +1,12 @@
+[
+    {
+      "email": "useremail555@email.com",
+      "username": "USERNAME101",
+      "password": "passWORD1",
+      "confirm": "passWORD1",
+      "genres": ["RPG","ACTION"],
+      "avatar": "../images/avatartwo.jpg",
+      "aboutMe": "This is the about me section. I like gaming",
+      "user_id": "1234"
+    }
+  ]
