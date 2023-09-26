@@ -146,10 +146,20 @@ main hr {
     background-color: white;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.18);
     border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    color: #49c1a2;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif
 }
 .sideBar-container {
     padding: 20px;
     text-align: center;
+    color: rgb(58, 58, 58);
+    font-size: 22px;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif
 }
 .sideBar img {
     width: 80%;

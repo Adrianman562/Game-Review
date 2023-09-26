@@ -41,13 +41,6 @@
       <div class="navBar">
         <ul>
           <li><a href="index.html" class="active">🏠Home</a></li>
-          <li><a href="categoryGame.html">🏹Action</a></li>
-          <li><a href="categoryGame.html">🔑Adventure</a></li>
-          <li><a href="categoryGame.html">💃Simulation</a></li>
-          <li><a href="categoryGame.html">🌴Survival</a></li>
-          <li><a href="categoryGame.html">⚽Sports</a></li>
-          <li><a href="categoryGame.html">🚗Racing</a></li>
-          <li><a href="categoryGame.html">💀Horror</a></li>
           <li><a href="">🚪LogOut</a></li>
           <li><a href="profile.html">👨‍💻 My Profile</a></li>
           <li><a href="login.html">🔑 LogIn</a></li>
@@ -59,36 +52,84 @@
   <main id="main">
     <div class="main-container">
       <div class="sideBar">
+        Profile <hr> 
         <div class="sideBar-container">
           <img src="../images/th.jpg" alt="">
-          <h1>Adrian</h1>
-          <h2>adrianman562@gmail.com</h2>
-          <h2>Role: Admin</h2>
-          <h2>💵 Balance: 250$</h2>
-          <p>Welcome to my profile.</p>
+          <div class="SettingsArea">
+            <div class="Settings">
+              <form>
+                <div class="row">
+                  <h2>User name: </h2>
+                  <input type="text" formControlName="username" name="username" required minlength="3">
+  
+                </div>
+  
+                <div class="row">
+                  <h2>Genre: </h2>
+                  <input type="text" formControlName="genre" name="genre" required minlength="3">
+  
+                </div>
+  
+                <div class="row">
+                  <h2>Profile Title: </h2>
+                  <textarea formControlName="title" name="title"></textarea>
+                </div>
+  
+                <button class="submitBtn" type="submit">Save Changes</button>
+              </form>
+
+            </div>
+            
+          </div>
         </div>
       </div>
+
       <section>
         <div class="myGamesArea">
-          <h1>Favorite Games</h1>
+          <h1>Genres</h1>
           <hr>
+
           <div class="postContainer">
-            <div class="post">
-              <a href="gameDetails.html"><img src="../images/capsule_616x353.jpg"></a>
-              <a href="gameDetails.html">
-                <h2>APEX LENGENDS</h2>
-              </a>
-            </div>
             <div class="post">
               <a href="gameDetails.html"><img src="../images/images-5.jpg"></a>
               <a href="gameDetails.html">
-                <h2>SUPER MARIO SMASH BROS.</h2>
+                <h2>🏹Action</h2>
+              </a>
+            </div>
+            <div class="post">
+              <a href="gameDetails.html"><img src="../images/god-of-war-ragnarok-naslovna.jpg"></a>
+              <a href="gameDetails.html">
+                <h2>🔑Adventure</h2>
+              </a>
+            </div>
+            <div class="post">
+              <a href="gameDetails.html"><img src="../images/the-sims-4-pc-mac-game-ea-app-cover.jpg"></a>
+              <a href="gameDetails.html">
+                <h2>💃Simulation</h2>
+              </a>
+            </div>
+            <div class="post">
+              <a href="gameDetails.html"><img src="../images/apex.jpg"></a>
+              <a href="gameDetails.html">
+                <h2>🌴Survival</h2>
+              </a>
+            </div>
+            <div class="post">
+              <a href="gameDetails.html"><img src="../images/fifa-23-editions_2-1.jpg"></a>
+              <a href="gameDetails.html">
+                <h2>⚽Sports</h2>
+              </a>
+            </div>
+            <div class="post">
+              <a href="gameDetails.html"><img src="../images/capsule_616x353.jpg"></a>
+              <a href="gameDetails.html">
+                <h2>🚗Racing</h2>
               </a>
             </div>
             <div class="post">
               <a href="gameDetails.html"><img src="../images/images-6.jpg"></a>
               <a href="gameDetails.html">
-                <h2>GRAND THEFT AUTO</h2>
+                <h2>💀Horror</h2>
               </a>
             </div>
           </div>
@@ -97,24 +138,18 @@
           </div> -->
         </div>
         <div class="SettingsArea">
-          <h1>Settings</h1>
+          <h1>Post Review</h1>
           <hr>
           <div class="Settings">
             <form>
               <div class="row">
-                <h2>User name: </h2>
-                <input type="text" formControlName="username" name="username" required minlength="3">
+                <h2>Review Title: </h2>
+                <input type="text" formControlName="Review" name="Review" required minlength="3">
 
               </div>
 
               <div class="row">
-                <h2>Profile Photo: </h2>
-                <input type="text" formControlName="image" name="image" required pattern="^(https?:\/\/).*\.(jpg|png)$">
-
-              </div>
-
-              <div class="row">
-                <h2>Profile Title: </h2>
+                <h2>Review </h2>
                 <textarea formControlName="title" name="title"></textarea>
               </div>
 

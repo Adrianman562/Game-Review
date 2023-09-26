@@ -9,7 +9,7 @@ const sequelize = new Sequelize(
   {
     host: "localhost",
     dialect: "msql",
-    port: 3306,
+    port: 3305,
   }
 );
 
