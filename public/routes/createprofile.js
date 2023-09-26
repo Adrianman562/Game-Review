@@ -13,15 +13,14 @@ fb.get('/pages/createprofile', (req, res) => {
 fb.post('/pages/createprofile', (req, res) => {
   console.info(`${req.method} request received to submit new profile`);
 
-  const { email, username, password, confirm, genres,avatar, aboutMe } = req.body;
+  const { email, username, password, genres,avatar, aboutMe } = req.body;
 
 
-  if (email && username && password && confirm  && genres && avatar && aboutMe) {
+  if (email && username && password  && genres && avatar && aboutMe) {
     const newUser = {
       email,
       username,
       password,
-      confirm,
       genres,
       avatar,
       aboutMe,

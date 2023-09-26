@@ -8,7 +8,6 @@ createProfile
     let email = document.getElementById('emailInput').value;
     let username = document.getElementById('usernameInput').value.trim();
     let password = document.getElementById('passwordInput').value.trim();
-    let confirm = document.getElementById('confirmInput').value.trim();
     let genres = document.querySelectorAll('.checkbox').value;
     let avatar = document.getElementById('avatarInput').value;
     let aboutMe = document.getElementById('textArea').value;
@@ -19,7 +18,6 @@ createProfile
       email,
       username,
       password,
-      confirm,
       genres,
       avatar,
       aboutMe,
@@ -36,7 +34,6 @@ createProfile
         email = '';
         username = '';
         password = '';
-        confirm = '';
         genres = '';
         avatar = '';
         aboutMe = '';
