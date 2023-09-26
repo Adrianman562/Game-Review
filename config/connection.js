@@ -1,5 +1,4 @@
 const Sequelize = require("sequelize");
-
 require("dotenv").config();
 
 const sequelize = new Sequelize(
@@ -8,7 +7,7 @@ const sequelize = new Sequelize(
   process.env.DB_PASSWORD,
   {
     host: "localhost",
-    dialect: "msql",
+    dialect: "mysql",
     port: 3306,
   }
 );
