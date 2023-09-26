@@ -2,6 +2,8 @@ const router = require("express").Router();
 
 const { Users } = require("../../models");
 
+//user-routes
+
 //Will create new user
 router.post("/", async (req, res) => {
   try {
@@ -9,15 +11,16 @@ router.post("/", async (req, res) => {
       username: req.body.username,
       email: req.body.email,
       password: req.body.password,
+      about_me: req.body.about_me,
     });
 
-    req.session.save(() => {
-      req.session.loggedIn = true;
-
-      res.status(200).json(dbUserData);
-    });
+    !dbUserData
+      ? res.status(404).json({ message: "Creating user failed!" })
+      : res.status(200).json({
+          message:
+            "User is created!! If you are reading this change the route to the handlehbars of the dashboard",
+        });
   } catch (err) {
-    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -27,7 +30,7 @@ router.post("/login", async (req, res) => {
   try {
     const dbUserData = await Users.findOne({
       where: {
-        username: re.body.username,
+        username: req.body.username,
       },
     });
 

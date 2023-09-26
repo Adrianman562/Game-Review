@@ -9,4 +9,22 @@ Reviews.init({
     primaryKey: true,
     autoIncrement: true,
   },
+  game_title:{
+    type: DataTypes.STRING,
+
+
+  },
+  content:{
+    type:DataTypes.INTEGER,
+    allowNull:false,
+  },
+  rating:{
+    type:DataTypes.INTEGER,
+
+  },
+  user_id:{
+    references:
+  },
+
+
 });
