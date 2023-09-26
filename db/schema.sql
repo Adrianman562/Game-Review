@@ -1,4 +1,4 @@
-DROP DATABASE IF EXITS game_review_db
+DROP DATABASE IF EXISTS greview_db;
 
-CREATE DATABASE game_review_db
+CREATE DATABASE greview_db;
 
