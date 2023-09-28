@@ -11,6 +11,11 @@ router.get('/createprofile', async (req, res)=> {
     res.render('createprofile', {title: 'main'});
   });
 
+     //create profile route
+// router.get('/profile', async (req, res)=> {
+//   res.render('profile', {title: 'main'});
+// });
+
 
   // GET one profile
 router.get('/profile/:id', async (req, res) => {
