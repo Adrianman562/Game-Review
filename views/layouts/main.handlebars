@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Review Hub</title>
-    <link rel="stylesheet" href="../public/stylesheet/style.css"> 
+    <link rel="stylesheet" href="../../public/stylesheet/style.css"> 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link href="https://fonts.cdnfonts.com/css/games" rel="stylesheet">
@@ -26,11 +26,11 @@
       
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-start">
-            <a class="navbar-item">
+            <a class="navbar-item" href="/">
               Home
             </a>
       
-            <a class="navbar-item">
+            <a class="navbar-item" href="/reviews">
               Reviews
             </a>
       
@@ -61,11 +61,13 @@
             <div class="navbar-item">
               <div class="buttons">
                 <a class="button is-primary">
-                  <strong>Sign up</strong>
+                  <a href ="/createprofile">CREATE PROFILE</a>
                 </a>
-                <a class="button is-light">
-                  Log in
-                </a>
+                  {{#if loggedIn}}
+                  <button id="logout" class="btn-no-style">Logout</button>
+                  {{else}}
+                  <a href="/login">Login</a>
+                  {{/if}}
               </div>
             </div>
           </div>
@@ -74,9 +76,10 @@
       </header>
 
 {{{ body }}}
-
     <footer>
         <p>&copy; 2023 Game Review</p>
     </footer>
 </body>
+
 </html>
+

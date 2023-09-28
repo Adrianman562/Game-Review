@@ -2,10 +2,11 @@ const router = require("express").Router();
 
 const { Users } = require("../../models");
 
-//user-routes
+//   _dirname + api/user/
+
 
 //Will create new user
-router.post("/", async (req, res) => {
+router.post("/createprofile", async (req, res) => {
   try {
     const dbUserData = await Users.create({
       username: req.body.username,
@@ -55,6 +56,7 @@ router.post("/login", async (req, res) => {
     });
 
     res.status(200).json({ user: dbUserData, message: "You are logged in!" });
+    res.render('/profile/:id')
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

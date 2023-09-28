@@ -1,7 +1,7 @@
-const express = require('express');
-const createProfileRouter = require('./createprofile');
+const express = require("express").Router();
+const createProfileRouter = require("./createprofile");
 const app = express();
 
-app.use('/createprofile', createProfileRouter);
+app.use("/createprofile", createProfileRouter);
 
 module.exports = app;
