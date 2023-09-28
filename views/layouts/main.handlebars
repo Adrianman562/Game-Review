@@ -26,11 +26,11 @@
       
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-start">
-            <a class="navbar-item">
+            <a class="navbar-item" href="/">
               Home
             </a>
       
-            <a class="navbar-item">
+            <a class="navbar-item" href="/reviews">
               Reviews
             </a>
       
@@ -61,11 +61,13 @@
             <div class="navbar-item">
               <div class="buttons">
                 <a class="button is-primary">
-                  <strong>Sign up</strong>
+                  <a href ="/createprofile">CREATE PROFILE</a>
                 </a>
-                <a class="button is-light">
-                  Log in
-                </a>
+                  {{#if loggedIn}}
+                  <button id="logout" class="btn-no-style">Logout</button>
+                  {{else}}
+                  <a href="/login">Login</a>
+                  {{/if}}
               </div>
             </div>
           </div>
@@ -79,4 +81,5 @@
         <p>&copy; 2023 Game Review</p>
     </footer>
 </body>
+
 </html>
