@@ -1,44 +1,53 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Game Review Hub</title>
-    <link rel="stylesheet" href="../../public/stylesheet/style.css"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link href="https://fonts.cdnfonts.com/css/games" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="../../public/stylesheet/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link href="https://fonts.cdnfonts.com/css/games" rel="stylesheet" />
+  </head>
+  <body>
 
-<header>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+    <header>
+      <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-          <h1 class="navbar-item"> Game Review
+          <h1 class="navbar-item">
+            Game Review
           </h1>
-      
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+
+          <a
+            role="button"
+            class="navbar-burger"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="navbarBasicExample"
+          >
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
           </a>
         </div>
-      
+
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-start">
             <a class="navbar-item" href="/">
               Home
             </a>
-      
+
             <a class="navbar-item" href="/reviews">
               Reviews
             </a>
-      
+
             <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link">
                 More
               </a>
-      
+
               <div class="navbar-dropdown">
                 <a class="navbar-item">
                   About
@@ -49,37 +58,36 @@
                 <a class="navbar-item">
                   Contact
                 </a>
-                <hr class="navbar-divider">
+                <hr class="navbar-divider" />
                 <a class="navbar-item">
                   Report an issue
                 </a>
               </div>
             </div>
           </div>
-      
+
           <div class="navbar-end">
             <div class="navbar-item">
               <div class="buttons">
                 <a class="button is-primary">
-                  <a href ="/createprofile">CREATE PROFILE</a>
+                  <a href="/">CREATE PROFILE</a>
                 </a>
-                  {{#if loggedIn}}
+                {{#if loggedIn}}
                   <button id="logout" class="btn-no-style">Logout</button>
-                  {{else}}
+                {{else}}
                   <a href="/login">Login</a>
-                  {{/if}}
+                {{/if}}
               </div>
             </div>
           </div>
         </div>
       </nav>
-      </header>
+    </header>
 
-{{{ body }}}
+    {{{body}}}
     <footer>
-        <p>&copy; 2023 Game Review</p>
+      <p>&copy; 2023 Game Review</p>
     </footer>
-</body>
+  </body>
 
 </html>
-
