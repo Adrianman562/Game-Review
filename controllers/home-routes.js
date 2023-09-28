@@ -1,30 +1,36 @@
 const router = require('express').Router();
 const { Users, Reviews } = require('../models');
 
-router.get('/', async (req, res) => {
-    try {
-      const dbUserData = await Users.findAll({
-        include: [
-          {
-            model: Reviews,
-            //need to update comments, able to pull in attributes from reviews
-            attributes: ['game_title', 'rating', 'genre', 'comments'],
-          },
-        ],
-      });
+
+router.get('/', async (req, res)=> {
+  console.log('homeroute');
+  res.render('homepage', {title: 'main'});
+});
+
+// router.get('/', async (req, res) => {
+//     try {
+//       const dbUserData = await Users.findAll({
+//         include: [
+//           {
+//             model: Reviews,
+//             //need to update comments, able to pull in attributes from reviews
+//             attributes: ['game_title', 'rating', 'genre', 'comments'],
+//           },
+//         ],
+//       });
   
-      const users = dbUserData.map((user) =>
-        user.get({ plain: true })
-      );
-      res.render('profile', {
-        users,
-        loggedIn: req.session.loggedIn,
-      });
-    } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
-    }
-  });
+//       const users = dbUserData.map((user) =>
+//         user.get({ plain: true })
+//       );
+//       res.render('main', {
+//         users,
+//         loggedIn: req.session.loggedIn,
+//       });
+//     } catch (err) {
+//       console.log(err);
+//       res.status(500).json(err);
+//     }
+//   });
 
   // GET one profile
 router.get('/profile/:id', async (req, res) => {
@@ -45,7 +51,7 @@ router.get('/profile/:id', async (req, res) => {
       });
   
       const user = dbUserData.get({ plain: true });
-      res.render('gallery', { user, loggedIn: req.session.loggedIn });
+      res.render('profile', { user, loggedIn: req.session.loggedIn });
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
