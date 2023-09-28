@@ -6,6 +6,7 @@
   <title>Game-Review</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="../images/logo.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Bulma Version 0.9.x-->
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
@@ -86,53 +87,31 @@
 
       <section>
         <div class="myGamesArea">
-          <h1>Genres</h1>
+          <h1>Reviews</h1>
           <hr>
 
           <div class="postContainer">
-            <div class="post">
-              <a href="gameDetails.html"><img src="../images/images-5.jpg"></a>
-              <a href="gameDetails.html">
-                <h2>🏹Action</h2>
-              </a>
+            <div id="">
             </div>
-            <div class="post">
-              <a href="gameDetails.html"><img src="../images/god-of-war-ragnarok-naslovna.jpg"></a>
-              <a href="gameDetails.html">
-                <h2>🔑Adventure</h2>
-              </a>
+
+            <div id="">  
             </div>
-            <div class="post">
-              <a href="gameDetails.html"><img src="../images/the-sims-4-pc-mac-game-ea-app-cover.jpg"></a>
-              <a href="gameDetails.html">
-                <h2>💃Simulation</h2>
-              </a>
+
+            <div id="">
             </div>
-            <div class="post">
-              <a href="gameDetails.html"><img src="../images/apex.jpg"></a>
-              <a href="gameDetails.html">
-                <h2>🌴Survival</h2>
-              </a>
+
+            <div id="">
             </div>
-            <div class="post">
-              <a href="gameDetails.html"><img src="../images/fifa-23-editions_2-1.jpg"></a>
-              <a href="gameDetails.html">
-                <h2>⚽Sports</h2>
-              </a>
+
+            <div id=""> 
             </div>
-            <div class="post">
-              <a href="gameDetails.html"><img src="../images/capsule_616x353.jpg"></a>
-              <a href="gameDetails.html">
-                <h2>🚗Racing</h2>
-              </a>
+
+            <div id="">
             </div>
-            <div class="post">
-              <a href="gameDetails.html"><img src="../images/images-6.jpg"></a>
-              <a href="gameDetails.html">
-                <h2>💀Horror</h2>
-              </a>
-            </div>
+
+            <div id="">
           </div>
+
           <!-- <div class="noGames">
             <h2>No Games</h2>
           </div> -->
@@ -145,11 +124,21 @@
               <div class="row">
                 <h2>Review Title: </h2>
                 <input type="text" formControlName="Review" name="Review" required minlength="3">
-
+             </div>
+             <div class="rate">
+                <input type="radio" id="star5" name="rate" value="5" />
+                <label for="star5" title="text">5 stars</label>
+                <input type="radio" id="star4" name="rate" value="4" />
+                <label for="star4" title="text">4 stars</label>
+                <input type="radio" id="star3" name="rate" value="3" />
+                <label for="star3" title="text">3 stars</label>
+                <input type="radio" id="star2" name="rate" value="2" />
+                <label for="star2" title="text">2 stars</label>
+                <input type="radio" id="star1" name="rate" value="1" />
+                <label for="star1" title="text">1 star</label>
               </div>
-
               <div class="row">
-                <h2>Review </h2>
+                <h2>Review: </h2>
                 <textarea formControlName="title" name="title"></textarea>
               </div>
 
