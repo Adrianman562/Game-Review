@@ -2,13 +2,10 @@
 # Group Project 2 
 
 <h1 align="center">
-    <a href="https://" target="_blank">
+    <a href="https://videos-games-reviews-5f7a3dea0ee8.herokuapp.com/" target="_blank">
      View Demo
     </a>
 </h1>
-<div align="center">
-    <img src=".jpg" width="600px">
-</div>
 
 ## Table of Contents
 

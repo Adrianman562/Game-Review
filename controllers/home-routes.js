@@ -12,9 +12,11 @@ router.get('/createprofile', async (req, res)=> {
   });
 
      //create profile route
-router.get('/profile', async (req, res)=> {
-  res.render('profile', {title: 'main'});
-});
+
+
+// router.get('/profile', async (req, res)=> {
+//   res.render('profile', {title: 'main'});
+// });
 
 
 //   // GET one profile
