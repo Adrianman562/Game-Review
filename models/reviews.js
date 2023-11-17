@@ -37,6 +37,6 @@ Reviews.init({
   underscored: true,
   modelName: 'reviews',
 
-});
 
 module.exports = Reviews;
+
