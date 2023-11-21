@@ -49,7 +49,7 @@ Users.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelname: "users",
+    modelName: "users",
   }
 );
 
