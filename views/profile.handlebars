@@ -1,0 +1,72 @@
+<head>
+<link href="https://fonts.cdnfonts.com/css/games" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../stylesheet/profile.css">
+</head> 
+<main id="main">
+    <div class="main-container">
+      <div class="sideBar">
+        {{user.username}} <hr> 
+        <div class="sideBar-container">
+          <img src="../images/th.jpg" alt="">
+          <div class="SettingsArea">
+            <div class="Settings">
+              <section>
+                <div class="row">
+                  <h2>ABOUT ME: </h2>
+                </div>
+              </section>
+
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <section>
+        <div class="myGamesArea">
+          <h1>Reviews</h1>
+          <hr>
+
+        <section class="flex-row justify-center">
+            {{#each gallery.reviews as |review|}}
+            {{> review-details}}
+            {{/each}}
+        </section>
+
+          <!-- <div class="noGames">
+            <h2>No Games</h2>
+          </div> -->
+        </div>
+        <div class="SettingsArea">
+          <h1>Post Review</h1>
+          <hr>
+          <div class="Settings">
+            <form>
+              <div class="row">
+                <h2>GAME Title: </h2>
+                <input type="text" id="reviewTitle" formControlName="Review" name="Review" required minlength="3">
+             </div>
+             <div class="rate">
+                <input type="radio" id="star5" name="rate" value="5" />
+                <label for="star5" title="text">5 stars</label>
+                <input type="radio" id="star4" name="rate" value="4" />
+                <label for="star4" title="text">4 stars</label>
+                <input type="radio" id="star3" name="rate" value="3" />
+                <label for="star3" title="text">3 stars</label>
+                <input type="radio" id="star2" name="rate" value="2" />
+                <label for="star2" title="text">2 stars</label>
+                <input type="radio" id="star1" name="rate" value="1" />
+                <label for="star1" title="text">1 star</label>
+              </div>
+              <div class="row">
+                <h2>Review: </h2>
+                <textarea formControlName="title" name="title" id="review"></textarea>
+              </div>
+
+              <button class="submitBtn" type="submit">Save REVIEW</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main> 
