@@ -46,14 +46,15 @@ router.post("/login", async (req, res) => {
         .json({ message: "Incorrect email or Password. Please try again!" });
       return;
     } else {
-      res.redirect("/");
-      console.log("you should see the profile page");
+      req.session.save(() => {
+        req.session.user_id = dbUserData.id;
+        req.session.logged_in = true;
+        res.status(200).json({message: "Successfully logged in"})
+        console.log("you should see the profile page");
+      });
+      
+      
     }
-
-    req.session.save(() => {
-      req.session.user_id = dbUserData.id;
-      req.session.logged_in = true;
-    });
   } catch (err) {
     res.status(500).json({ message: "Check endpoint!", err });
   }

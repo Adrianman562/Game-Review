@@ -9,7 +9,7 @@ const signupFormHandler = async (event) => {
     console.log(password, username, email);
 
     if (username && email && password) {
-      const response = await fetch("/api/users/signup", {
+      const response = await fetch("/api/users/createprofile", { 
         method: "POST",
         body: JSON.stringify({ username, email, password }),
         headers: { "Content-Type": "application/json" },
@@ -26,5 +26,5 @@ const signupFormHandler = async (event) => {
 };
 
 document
-  .getElementById("submitButton")
+  .getElementById("createProfileform") 
   .addEventListener("submit", signupFormHandler);
