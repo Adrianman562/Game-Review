@@ -1,28 +1,27 @@
 const loginFormHandler = async (event) => {
-    // Stop the browser from submitting the form so we can do so with JavaScript
-    event.preventDefault();
-  
-    // Gather the data from the form elements on the page
-    const email = document.querySelector('#username').value.trim();
-    const password = document.querySelector('#password').value.trim();
-  
-    if (email && password) {
-      // Send the e-mail and password to the server
-      const response = await fetch('/api/users/login', {
-        method: 'POST',
-        body: JSON.stringify({ email, password }),
-        headers: { 'Content-Type': 'application/json' },
+  event.preventDefault();
+  try {
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
+    console.log(username, password);
+
+    if (username && password) {
+      const response = await fetch("/api/users/login", {
+        method: "POST",
+        body: JSON.stringify({ username, password }),
+        headers: { "Content-Type": "application/json" },
       });
-  
+
       if (response.ok) {
-        document.location.replace('/');
+        document.location.replace("/");
       } else {
-        alert('Failed to log in');
+        console.log("try again!");
       }
     }
-  };
-  
-  document
-    .querySelector('.login-form')
-    .addEventListener('submit', loginFormHandler);
-  
+  } catch (err) {
+    res.status(500).json({ message: "check public/javscript file", err });
+  }
+};
+document
+  .getElementById("loginform")
+  .addEventListener("submit", loginFormHandler);

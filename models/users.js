@@ -40,13 +40,6 @@ Users.init(
         len: [8],
       },
     },
-    about_me: {
-      type: DataTypes.STRING,
-      allowNull: true,
-      validate: {
-        len: [100],
-      },
-    },
   },
   {
     hooks: {

@@ -2,9 +2,6 @@ const router = require("express").Router();
 
 const { Users } = require("../../models");
 
-//   _dirname + api/user/
-
-
 //Will create new user
 router.post("/createprofile", async (req, res) => {
   try {
@@ -12,7 +9,6 @@ router.post("/createprofile", async (req, res) => {
       username: req.body.username,
       email: req.body.email,
       password: req.body.password,
-      about_me: req.body.about_me,
     });
 
     !dbUserData
@@ -37,7 +33,7 @@ router.post("/login", async (req, res) => {
 
     if (!dbUserData) {
       res
-        .status(404)
+        .status(400)
         .json({ message: "Incorrect email or password. Please try again!" });
       return;
     }
@@ -49,25 +45,25 @@ router.post("/login", async (req, res) => {
         .status(404)
         .json({ message: "Incorrect email or Password. Please try again!" });
       return;
+    } else {
+      res.redirect("/");
+      console.log("you should see the profile page");
     }
 
     req.session.save(() => {
-      req.session.loggedIn = true;
+      req.session.user_id = dbUserData.id;
+      req.session.logged_in = true;
     });
-
-    res.status(200).json({ user: dbUserData, message: "You are logged in!" });
-    res.render('/profile/:id')
   } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
+    res.status(500).json({ message: "Check endpoint!", err });
   }
 });
 
 //logout
 router.post("/logout", (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.logged_in) {
     req.session.destroy(() => {
-      res.status(204).end();
+      res.status(200).end();
     });
   } else {
     res.status(404).end();
