@@ -6,7 +6,7 @@
 <main id="main">
     <div class="main-container">
       <div class="sideBar">
-        {{user.username}} <hr> 
+       Username <hr> 
         <div class="sideBar-container">
           <img src="../images/th.jpg" alt="">
           <div class="SettingsArea">
@@ -14,7 +14,7 @@
               <section>
                 <div class="row">
                   <h2>ABOUT ME: </h2>
-                  <p name="aboutME" id="aboutMe">{{user.about_me}}</p>
+                  <p name="aboutME" id="aboutMe"></p>
                 </div>
               </section>
 
@@ -28,12 +28,6 @@
         <div class="myGamesArea">
           <h1>Reviews</h1>
           <hr>
-
-        <section class="flex-row justify-center">
-            {{#each gallery.reviews as |review|}}
-            {{> review-details}}
-            {{/each}}
-        </section>
 
           <!-- <div class="noGames">
             <h2>No Games</h2>

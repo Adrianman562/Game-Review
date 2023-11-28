@@ -13,13 +13,15 @@ const loginFormHandler = async (event) => {
       });
 
       if (response.ok) {
-        document.location.replace("/");
+        const { id } = await response.json();
+        document.location.replace(`users/${id}`);
       } else {
         console.log("try again!");
       }
     }
   } catch (err) {
-    res.status(500).json({ message: "check public/javscript file", err });
+    console.error(err);
+    res.status(500).json({ message: "check public/javascript file" });
   }
 };
 document

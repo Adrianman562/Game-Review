@@ -34,11 +34,6 @@ Users.init(
     password: {
       type: DataTypes.STRING,
       allowNull: false,
-      // 8 characters long? must have integers?
-      // need to has password
-      validate: {
-        len: [8],
-      },
     },
   },
   {

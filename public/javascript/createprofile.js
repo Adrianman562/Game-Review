@@ -2,9 +2,9 @@ const signupFormHandler = async (event) => {
   event.preventDefault();
 
   try {
-    let email = document.getElementById("emailInput").value.trim();
-    let username = document.getElementById("usernameInput").value.trim();
-    let password = document.getElementById("passwordInput").value.trim();
+    const email = document.getElementById("emailInput").value.trim();
+    const username = document.getElementById("usernameInput").value.trim();
+    const password = document.getElementById("passwordInput").value.trim();
 
     console.log(password, username, email);
 

@@ -11,16 +11,20 @@ router.post("/createprofile", async (req, res) => {
       password: req.body.password,
     });
 
-    !dbUserData
-      ? res.status(404).json({ message: "Creating user failed!" })
-      : res.status(200).json({
-          message:
-            "User is created!! If you are reading this change the route to the handlehbars of the dashboard",
-        });
+    if (!dbUserData) {
+      res.status(404).json({ message: "Creating user failed!" });
+      return;
+    }
+
+    const generatedId = dbUserData.id;
+
+    res.status(200).json({ id: generatedId, message: "User is created!" });
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json({ message: "Error creating user", error: err });
   }
 });
+
+
 
 //login
 router.post("/login", async (req, res) => {
@@ -32,33 +36,28 @@ router.post("/login", async (req, res) => {
     });
 
     if (!dbUserData) {
-      res
-        .status(400)
-        .json({ message: "Incorrect email or password. Please try again!" });
+      res.status(400).json({ message: "Incorrect email or password. Please try again!" });
       return;
     }
 
     const validPassword = await dbUserData.checkPassword(req.body.password);
 
     if (!validPassword) {
-      res
-        .status(404)
-        .json({ message: "Incorrect email or Password. Please try again!" });
+      res.status(404).json({ message: "Incorrect email or password. Please try again!" });
       return;
-    } else {
-      req.session.save(() => {
-        req.session.user_id = dbUserData.id;
-        req.session.logged_in = true;
-        res.status(200).json({message: "Successfully logged in"})
-        console.log("you should see the profile page");
-      });
-      
-      
     }
+
+    req.session.save(() => {
+      req.session.user_id = dbUserData.id;
+      req.session.logged_in = true;
+      res.status(200).json({ id: dbUserData.id, message: "Successfully logged in" });
+      console.log("You should see the profile page");
+    });
   } catch (err) {
     res.status(500).json({ message: "Check endpoint!", err });
   }
 });
+
 
 //logout
 router.post("/logout", (req, res) => {

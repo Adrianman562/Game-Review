@@ -2,17 +2,6 @@ const router = require("express").Router();
 const withAuth = require("../auth/auth");
 const { Users, Reviews } = require("../models");
 
-router.get("/", withAuth, async (req, res) => {
-  try {
-    const userData = await Users.findByPk(req.session.user_id, {});
-
-    res.render("profile", {
-      logged_in: req.session.logged_in,
-    });
-  } catch (err) {
-    res.status(500).json({ message: "Check home endpoint!" });
-  }
-});
 /*
 // GET one profile
 router.get("/profile/:id", async (req, res) => {
@@ -40,18 +29,11 @@ router.get("/profile/:id", async (req, res) => {
   }
 });
 
-// GET one review
-router.get("/review/:id", async (req, res) => {
-  try {
-    const dbReviewData = await Reviews.findByPk(req.params.id);
-
-    const review = dbReviewData.get({ plain: true });
-    res.render("review", { review, logged_in: req.session.logged_in });
-  } catch (err) {
-    res.status(500).json({ message: "Check review endpoint!" });
-  }
-});
 */
+router.get("/", async (req, res) => {
+  res.render("homepage");
+});
+
 //create profile route
 router.get("/createprofile", async (req, res) => {
   res.render("createprofile");
@@ -60,6 +42,20 @@ router.get("/createprofile", async (req, res) => {
 // Login route
 router.get("/login", (req, res) => {
   res.render("homepage");
+});
+
+router.get("/users", (req, res) => {
+  res.render("profile");
+});
+
+//render single user profile
+router.get("/users/:id", withAuth, async (req, res) => {
+  try {
+    const userData = await Users.findByPk(req.params.id, {});
+    res.render("profile", { userData, logged_in: req.session.logged_in });
+  } catch (err) {
+    res.status(500).json({ message: "error in getting user" });
+  }
 });
 
 module.exports = router;
