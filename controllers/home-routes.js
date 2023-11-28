@@ -51,9 +51,11 @@ router.get("/users", (req, res) => {
 //render single user profile
 router.get("/users/:id", withAuth, async (req, res) => {
   try {
-    const userData = await Users.findByPk(req.params.id, {});
-    res.render("profile", { userData, logged_in: req.session.logged_in });
+    const userData = await Users.findByPk(req.params.id);
+    const user = userData.get({plain: true});
+    res.render("profile", { user, logged_in: req.session.logged_in });
   } catch (err) {
+    console.log(err);
     res.status(500).json({ message: "error in getting user" });
   }
 });
