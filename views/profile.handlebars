@@ -6,7 +6,8 @@
 <main id="main">
     <div class="main-container">
       <div class="sideBar">
-       Username <hr> 
+       USERNAME : <br>
+       {{user.username}}<hr> 
         <div class="sideBar-container">
           <img src="../images/th.jpg" alt="">
           <div class="SettingsArea">
@@ -14,7 +15,9 @@
               <section>
                 <div class="row">
                   <h2>ABOUT ME: </h2>
-                  <p name="aboutME" id="aboutMe"></p>
+                  <p name="aboutME" id="aboutMe">
+                    Email: {{user.email}}
+                  </p>
                 </div>
               </section>
 
