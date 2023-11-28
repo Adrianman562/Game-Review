@@ -103,7 +103,7 @@ main {
     height: auto;
     margin: auto;
     margin: 40px 0;
-    background: url("../img/bg.png");
+    background: url("../images/background");
     background-size: 30%;
     background-position: center;
 }
